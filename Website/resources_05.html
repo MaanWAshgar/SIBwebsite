@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <link rel="stylesheet" href="css/main.css" type="text/css" />
+    <link rel="stylesheet" href="css/budgettool.css" type="text/css" />
+    <!-- Script for the jQuery and the budget tool-->
+    <script src="js/jquery.js"></script>
+    <script src="js/SimpleTableCellEditor.js"></script>
+    <script src="js/Chart.bundle.js"></script>
+    <script src="js/budgettool.js"></script>
+
+    <meta charset="UTF-8" />
+    <!--The following meta tag was added based on the recommendation on this
+    page https://www.w3schools.com/tags/tag_meta.asp -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Maan Ashgar" />
+    <meta name="description" content="Budgeting Tool" />
+    <meta name="last-modified" content="21-02-2019" />
+    <title>Budgeting Tool</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="websiteheader">
+        <a href="./index.html"><img src="./img/logo.png" alt="Website Logo"
+          width="70" height="70" class="websitelogo"/></a>
+        <h1>Saving and Investing for Beginners</h1>
+      </div>
+
+      <nav>
+        <!-- Navigation goes here -->
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./savingsection.html">Saving</a></li>
+          <li><a href="./investingsection.html">Investing</a></li>
+          <li id="currentpage"><a href="./resources.html">Resources</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./contactus.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="themedline"></div>
+    </header>
+
+    <main>
+      <article>
+        <!-- Article header image and source link-->
+        <div class="articleimagecontainer">
+          <img src="./img/numbers-money-calculating-calculation.jpg"
+          alt="Gold-colored Coins Near Calculator" class="articleimage" />
+        </div>
+        <a href="https://www.pexels.com/photo/numbers-money-calculating-calculation-3305/"
+        class="articleimagecredit">Photo by Breakingpic from Pexels</a>
+        <section>
+          <!-- Table of content -->
+          <div class="tableofcontent">
+            <ul>
+              <li><a href="./savingsection.html">Saving</a></li>
+              <li>
+                <ul>
+                  <li><a href="./saving_01.html">Emergency Fund</a></li>
+                  <li><a href="./saving_02.html">Debt</a></li>
+                  <li><a href="./saving_03.html">Budget</a></li>
+                  <li><a href="./saving_04.html">Credit Cards</a></li>
+                  <li><a href="./saving_05.html">Insurance</a></li>
+                </ul>
+              </li>
+              <li><a href="./investingsection.html">Investing</a></li>
+              <li>
+                <ul>
+                  <li><a href="./investing_01.html">What is investing?</a></li>
+                  <li><a href="./investing_02.html">Multiple investing options</a></li>
+                  <li><a href="./investing_03.html">Monitoring your investments</a></li>
+                </ul>
+              </li>
+              <li><a href="./resources.html">Resources</a></li>
+              <li>
+                <ul>
+                  <li><a href="./resources_01.html">Books</a></li>
+                  <li><a href="./resources_02.html">Websites &amp; blogs</a></li>
+                  <li><a href="./resources_07.html">Twitter Accounts</a></li>
+                  <li><a href="./resources_03.html">Courses</a></li>
+                  <li><a href="./resources_04.html">Compound Interest Calculator</a></li>
+                  <li><a id="currentarticle" href="./resources_05.html">Budgeting Tool</a></li>
+                  <li><a href="./resources_06.html">Stock Portfolio Calculator</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Article title and text -->
+          <h3 class="articletitle">Budgeting Tool</h3>
+          <p>This tool will help you manage your monthly expenses and see where
+            your money goes. Try to track every dollar you spent, and by the end
+            of the month, you'll see which category of expenses takes most of your
+            income.
+          </p>
+          <br />
+
+          <div class="calculator">
+            <!-- Warnings regarding local storage. If not available, warn
+            the user about possible data loss -->
+            <div class='warnings'>
+              <p id="storagewarning" class="legalwarning">Local Storage not detected.
+              Data won't be saved when the page reload</p>
+              <p id="storagesafe">Your data will be saved when you leave or refresh the page</p>
+            </div>
+            <!-- In this section, the entering of transactions is handled -->
+            <form id="budgetToolInput">
+              <p class='boxguide'>Enter your transaction to be added:</p>
+              <label for="date">Date: </label>
+              <input type="date" name="date" id="date"
+              title="When did this transaction occurred?" required>
+              <br />
+              <!-- Type of the transaction: Expense (money going out) or
+              income (money coming in)-->
+              <label for="type">Type: </label>
+              <select name="type" id="type">
+                <option selected value="expense">Expense</option>
+                <option value="income">Income</option>
+              </select>
+              <br />
+              <label for="category">Category: </label>
+              <select name="category" id="category">
+                <option value="nocategory">Select a category</option>
+                <option value="groceries">Groceries</option>
+                <option value="eatingout">Eating Out</option>
+                <option value="entertainment">Entertainment</option>
+                <option value="personalexpenses">Personal Expenses</option>
+                <option value="homeandKitchen">Home and Kitchen</option>
+                <option value="food">Food</option>
+                <option value="rent">Rent</option>
+                <option value="utilities">Utilities</option>
+                <option value="medical">Medical</option>
+                <option value="extra">Extra</option>
+                <option value="cashflow">Cash flow</option>
+                <option value="salary">Salary</option>
+                <option value="refund">Refund</option>
+              </select>
+              <br />
+              <label for="name">Name: </label>
+              <input type="text" name="name" id="name" maxlength="100" required>
+              <br />
+              <label for="amount">Amount: </label>
+              <input type="number" name="amount" id="amount" required>
+              <br />
+              <input type="button" class="button" onclick="htmlTransactionAddButton()"
+              value="Add">
+              <!-- Following warning appeared if the regex check rejected the
+              entered amount value -->
+              <p id="amountcheck" class="legalwarning">Please enter a number in
+              the 'Amount' box (e.g. 2 or 2.01 with no - sign)</p>
+            </form>
+
+            <!-- In this section, We show all previous transactions -->
+            <div class='toolbox'>
+              <p class='boxguide'>List of all transactions</p>
+              <table id='transactionTable'>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Date</th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Amount</th>
+                  </tr>
+                </thead>
+
+                <tbody id='transactionTableBody'>
+                  <!-- rows will be added through JS when transactions are added -->
+                </tbody>
+
+              </table>
+            </div>
+
+            <!-- In this section, We show transactions analytics -->
+            <div id='analysis' class='toolbox'>
+              <div id='donotdeletetags'>
+                <p class='boxguide'>Transactions analysis</p>
+                <!-- Draw a line chart using ChartJS: https://www.chartjs.org/
+                  data is generate in the budgettool.js script -->
+                <canvas id="linechart" width="400" height="400"></canvas>
+                <!-- the information will be added through JS below this div -->
+              </div>
+              <h4>There are no transactions to analyze<br />
+              Enter your transactions to see your budget analysis</h4>
+            </div>
+
+            <!-- In this section, We show the tool settings -->
+            <div id="settings" class='toolbox'>
+              <p class='boxguide'>Settings</p>
+              <br />
+              <label for="currency">Currency: </label>
+              <!-- List of currency and symbols acquired from Wikipedia
+              https://en.wikipedia.org/wiki/Currency -->
+              <select name="currency" id="currency" onchange="changeCurrency()">
+                <option value="C$">CAD (C$)</option>
+                <option value="$">USD (US$)</option>
+                <option value="元">CNY (元)</option>
+                <option value="SR">S.R. (SR)</option>
+                <option value="€">EUR (€)</option>
+                <option value="¥">JPY (¥)</option>
+              </select>
+
+              <br />
+              <!-- Option to remove all the data in the local storage -->
+              <input type="button" class="button" onclick="removeAllData()"
+              value="Clear All Saved Data">
+
+              <br />
+              <!-- Option export the data as a JSON text -->
+              <input type="button" class="button" onclick="exportData()"
+              value="Export Data As JSON">
+            </div>
+
+          </div>
+
+          <br />
+        </section>
+      </article>
+
+      <!-- Bottom navigation (Next and previous buttons)-->
+      <div class="bottomnav">
+        <a class="button" href="./resources_04.html">&lt; Compound Interest Calculator</a>
+        <a class="button alignright" href="./resources_06.html">Stock Portfolio Calculator &gt;</a>
+      </div>
+    </main>
+
+    <footer>
+      <a href="about.html">About</a>
+      <a href="contactus.html">Contact Us</a>
+    </footer>
+
+  </body>
+</html>

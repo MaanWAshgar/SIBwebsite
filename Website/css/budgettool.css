@@ -1,0 +1,128 @@
+/*
+CSS stylesheet
+Author: Maan Ashgar
+Last updated: 17/02/2019
+*/
+
+.calculator {
+  padding: 0 10px;
+}
+
+#transactionTableBody {
+
+}
+
+#storagewarning {
+  background-color: #ffe6e6;
+  display: none;
+  margin-top: 10px;
+}
+
+#storagesafe {
+  background-color: #e6ffe6;
+  border: 1px dashed green;
+  color: green;
+  display: none;
+  padding: 1em;
+}
+
+#amountcheck {
+  display: none;
+}
+
+form {
+  margin: 10px 0;
+}
+
+table {
+  display: block;
+  max-height: 500px;
+  overflow: auto;
+  width: 100%;
+}
+
+th {
+  overflow: hidden;
+  text-align: left;
+}
+
+td {
+  border-bottom: 1px solid lightgray;
+  padding: 5px;
+  overflow: hidden;
+}
+
+.boxguide {
+  font-weight: bold;
+  margin: 0 0 1em 0;
+}
+
+.toolbox {
+  border: 1px solid #E89B00;
+  font-family: 'Raleway', 'Arial', sans-serif;
+  margin-top: 10px;
+  padding: 20px;
+}
+
+#budgetToolInput input, select {
+  margin: 5px;
+}
+
+hr {
+  border: 1px dashed #E89B00;
+}
+
+textarea {
+  display: block;
+}
+
+.graphkeyincome {
+  color: green;
+}
+
+.graphkeyexpense {
+  color: red;
+}
+
+.graphbarfull {
+  color: #008080;
+  letter-spacing: -8px;
+}
+
+.graphbarempty {
+  color: #FFDF01;
+  letter-spacing: -8px;
+}
+
+.categorybars {
+  line-height: 21px;
+}
+
+.amountcell {
+  width: 40px;
+}
+
+.datecell {
+  width: 88px;
+}
+
+.namecell, .datecell {
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#categorycell {
+  width: 80px;
+}
+
+#typecell {
+  width: 68px;
+}
+
+@media (max-width: 500px) {
+  .graphbarfull {
+    letter-spacing: -10px;
+  }
+}

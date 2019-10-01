@@ -1,0 +1,359 @@
+/*
+CSS stylesheet
+Author: Maan Ashgar
+Last updated: 04/02/2019
+# Using 'Teal And Gold Color Scheme' from schemecolor.com
+https://www.schemecolor.com/teal-and-gold-color-scheme.php
+*/
+/*###################### imported fonts start ######################*/
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,600|Roboto+Slab:400,700');
+/*###################### imported fonts end ######################*/
+
+/*The following rule added to hide the table of content in article
+pages when the width of the screen is small (mobile devices)*/
+@media (max-width: 650px) {
+    .tableofcontent {
+      display: none;
+    }
+}
+
+html {
+  /* This was added to try and stop the page from jumping around
+  when the scrollbar is added to the page when it is longer than
+  the screen */
+  overflow-y: scroll;
+}
+
+body {
+  background-color: #008080;
+  margin: 0;
+  padding: 10px;
+}
+
+header, main, footer {
+  margin-left: auto;
+  margin-right: auto;
+  /* max-width is based on the advice written here:
+  https://ux.stackexchange.com/questions/104745/whats-the-recommended-max-width-for-the-main-container-and-for-the-main-column*/
+  max-width: 960px;
+  /* min-width is based on 320px being a widely used minimum width based
+  on my search */
+  min-width: 300px;
+}
+
+
+/*###################### Header specific start ######################*/
+header {
+  background-color: white;
+  /* background image by thephilippena source: https://pixabay.com/photo-293860/*/
+  background-image: url("../img/money-gold-coins-finance.jpg");
+  background-position: 30% 90%;
+  background-repeat: no-repeat;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  margin-top: 10px;
+}
+
+.websiteheader{
+  align-items: center;
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  padding: 10px;
+}
+
+.websitelogo {
+  float: left;
+  padding: 10px;
+}
+
+h1 {
+  color: black;
+  display: inline;
+  /*Arial is the fallback font*/
+  font-family: 'Roboto Slab', serif;
+  font-size: 2.5em;
+}
+/*###################### Header specific end ######################*/
+/*###################### Nav specific start ######################*/
+nav {
+  background-color: #FFDF01;
+}
+
+nav ul {
+  margin: 0;
+}
+
+nav li {
+  display: inline-block;
+  padding: 10px 10px;
+}
+
+nav li:hover {
+  background-color: #E89B00;
+}
+
+#currentpage {
+  background-color: #F7B501;
+}
+
+nav a {
+  color: black;
+  font-family: 'Roboto Slab', serif;
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.themedline {
+  background-color: #F7B501;
+  height: 3px;
+}
+
+/*###################### Nav specific ends ######################*/
+
+
+main {
+  background-color: white;
+  display: block;
+  padding: 30px 0;
+}
+
+main P {
+  font-family: 'Raleway', 'Arial', sans-serif;
+  margin: 0 25px;
+}
+
+h3 {
+  font-family: 'Roboto Slab', serif;
+}
+
+.largeParagraphStart {
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+.site-section {
+  border: 1px solid #E89B00;
+  color: black;
+  display: block;
+  margin: 18px;
+  padding: 0 10px 15px 10px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.site-section:hover, .articlelink:hover {
+  background-color: #FFDF01;
+}
+
+/*--------- article specific ----------------*/
+article {
+  display: grid;
+  grid-template: auto / 100%
+}
+
+.articlelink {
+  align-items: center;
+  border: 1px solid #E89B00;
+  display: grid;
+  grid-template-columns: 100px auto;
+  margin: 10px 18px;
+/*  padding: 15px;*/
+  text-align: left;
+  text-decoration: none;
+}
+
+.articletitledescrip {
+  color: black;
+  margin: 0;
+  padding: 5px 1em;
+}
+
+.articletitledescrip P {
+  margin: 0;
+  padding: 0;
+}
+
+.articletitledescrip h3 {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+.articletitle {
+  margin: 10px 25px;
+}
+
+.articleimagecontainer {
+  margin: auto;
+  max-height: 400px;
+  max-width: 95%;
+  overflow: hidden;
+}
+
+.articlethumbimage {
+  height: 90px;
+  padding: 5px;
+  width: 90px;
+}
+
+.articleimage {
+  max-width: 100%;
+}
+
+.articleimagecredit {
+  color: gray;
+  display: block;
+  font-style: italic;
+  text-align: center;
+}
+
+/*------ table of content specific -------------*/
+.tableofcontent {
+  background-color: #EBF1F1;
+  float: left;
+  margin: 5px 10px 5px 25px;
+  width: 20%;
+  word-wrap: break-word;
+}
+
+.tableofcontent ul {
+  list-style-type: square;
+  padding-left: 25px;
+}
+
+.tableofcontent li {
+  padding-left: 0;
+}
+
+.tableofcontent a {
+    color: black;
+    text-decoration: none;
+}
+
+.tableofcontent a:hover {
+  background-color: #E89B00;
+}
+
+#currentarticle {
+  background-color: #549D95;
+  color: white;
+}
+
+.legalwarning {
+  border: 1px dashed red;
+  color: red;
+  padding: 1em;
+}
+
+.button {
+  background-color: #FFDF01;
+  color: black;
+  font-family: 'Roboto Slab', serif;
+  margin: 20px 0 20px 20px;
+  padding: 10px;
+  text-decoration: none;
+}
+
+.button:hover {
+    background-color: #E89B00;
+}
+
+.bottomnav {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 100%;
+  justify-items: left;
+}
+
+.alignright {
+  justify-self: right;
+  margin: 20px 20px 20px 0;
+}
+
+
+/*----------- form specific -----------*/
+form {
+  border: 1px solid #E89B00;
+  font-family: 'Raleway', 'Arial', sans-serif;
+  margin: 25px 25px;
+  padding: 20px;
+}
+
+textarea {
+  height: 10em;
+  max-width: 90%;
+  width: 30em;
+}
+
+input:focus, textarea:focus {
+  border: 2px solid #E89B00;
+}
+
+label {
+  padding-right: 0.5em;
+}
+
+button.button {
+  font-family: 'Raleway', 'Arial', sans-serif;
+  font-weight: bold;
+  margin-left: 10em;
+  padding: 10px 30px;
+}
+
+.calculator{
+  overflow: hidden;
+}
+
+/*###################### Footer specific start ######################*/
+footer {
+  background-color: white;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  display: block;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+footer a {
+  color: black;
+  font-family: 'Raleway', 'Arial', sans-serif;
+}
+/*###################### Footer specific end ######################*/
+
+/* the videoId div is used to contain the video id for the YouTube video
+included in th page*/
+.videoid {
+  display: none;
+}
+
+/* Solution for responsive iframe video acquired from:
+https://stackoverflow.com/questions/15844500/shrink-a-youtube-video-to-responsive-width
+*/
+.videowrapper {
+  display: grid;
+  position: relative;
+  padding-bottom: 42.25%;
+  height: 0;
+}
+
+.videowrapper iframe {
+  position: absolute;
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.twitter {
+  float: left;
+}
+
+.tweetsbox {
+  display: block;
+  width: 330px;
+  height: 400px;
+  overflow-y: scroll;
+
+    border: 1px solid #E89B00;
+}
